@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 
 const images = [
-  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK_nmxFKUd1XKM0QyNZh4h6j3UJYQKIXmveg&s", title: "Imagen 1" },
-  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyDJ-wd9gTsrWHd9C3ccWmh-wMKTCQMuWn2w&s", title: "Imagen 2" },
+  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK_nmxFKUd1XKM0QyNZh4h6j3UJYQKIXmveg&s", title: "Tu alimentacion es importante" },
+  { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyDJ-wd9gTsrWHd9C3ccWmh-wMKTCQMuWn2w&s", title: "El ejercicio te ayuda" },
 ];
 
 export default function Slider() {

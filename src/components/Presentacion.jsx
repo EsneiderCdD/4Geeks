@@ -38,20 +38,6 @@ const Presentacion = () => {
           A través de técnicas como la meditación, la respiración consciente, el trabajo con sueños y la integración de la sombra, se busca equilibrar la mente, las emociones y la esencia más profunda del ser. Esta terapia considera al individuo en su totalidad, abordando no solo sus conflictos y traumas, sino también su potencial de crecimiento y transformación.
 
           Es un camino hacia el bienestar integral, donde la sanación se convierte en un proceso de expansión personal y espiritual.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </p>
       </div>
     </div>

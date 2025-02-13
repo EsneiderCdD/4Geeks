@@ -33,8 +33,8 @@ const Acordeon = ({ items = [] }) => {
 };
 
 const items = [ 
-  { title: 'Terapia 1:1', content: 'Sesiones individuales personalizadas para el crecimiento personal.     Costo $' },
-  { title: 'Terapia grupal', content: 'Sesiones en grupo para compartir experiencias y apoyo mutuo.      Costo $' }
+  { title: 'Terapia 1:1', content: 'Sesiones individuales personalizadas para el crecimiento personal. Costo $' },
+  { title: 'Terapia grupal', content: 'Sesiones en grupo para compartir experiencias y apoyo mutuo. Costo $' }
 ];
 
 export default function App() {

@@ -7,11 +7,12 @@ import Acordeon from '../components/Acordeon'
 import Presentacion from '../components/Presentacion'
 import TituloSlider from '../components/TituloSlider'
 import DescripcionServicios from '../components/DescripcionServicios'
+import MiCarrusel from '../components/Carrusel'
 const Home = () => {
   return (
     <div>
      <Presentacion/>
-     <Carrusel/>
+     <MiCarrusel/>
      <TituloSlider/>
      <Slider/>
      <Acordeon/>

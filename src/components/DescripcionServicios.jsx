@@ -26,8 +26,8 @@ const DescripcionServicios = ({ imagen, titulo, texto, invertido }) => {
         src={imagen}
         alt="Imagen"
         style={{
-          width: "150px",
-          height: "100px",
+          width: "500px",
+          height: "300px",
           borderRadius: "10px",
           objectFit: "cover",
         }}

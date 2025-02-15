@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from '../api/axiosConfig';
 
 const Login = () => {
@@ -7,16 +8,19 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
 
-  const validate = () => { //->Validar los campos<-
+  // Función para validar los campos
+  const validate = () => {
     const newErrors = {};
 
-    if (!email.trim()) { // ->Email
+    // Validación de Email
+    if (!email.trim()) {
       newErrors.email = 'El correo es obligatorio.';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = 'El correo no es válido.';
     }
 
-    if (!password.trim()) { // ->Password
+    // Validación de Password
+    if (!password.trim()) {
       newErrors.password = 'La contraseña es obligatoria.';
     } else if (password.length < 5) {
       newErrors.password = 'La contraseña debe tener al menos 5 caracteres.';
@@ -29,19 +33,19 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setMessage('');
-    if (!validate()) return; // Confirmación de errores
+    if (!validate()) return; // Si hay errores, no enviamos la solicitud
 
     try {
       const response = await axios.post('/api/user/login', {
         user_email: email,
         user_password: password,
       });
-      // Codigo para confirmar Token recibido en consola:
-      // console.log('Token recibido:', response.data.access_token);
-      
+
+      console.log('Token recibido:', response.data.access_token);
+
       if (response.data && response.data.access_token) {
         setMessage(`Inicio de sesión exitoso: Bienvenido ${response.data.user.name} ${response.data.user.lastname}`);
-         localStorage.setItem('access_token', response.data.access_token); // Guardar en localStorage.
+        localStorage.setItem('access_token', response.data.access_token);
       } else {
         setMessage(response.data.message || 'Error desconocido.');
       }
@@ -59,7 +63,7 @@ const Login = () => {
     <div style={{
       maxWidth: '400px',
       margin: '50px auto',
-      backgroundColor: '#F9E8D8', 
+      backgroundColor: '#F9E8D8',
       padding: '20px',
       borderRadius: '8px',
       textAlign: 'center'
@@ -91,7 +95,7 @@ const Login = () => {
         <button
           type="submit"
           style={{
-            backgroundColor: '#F3A29E', 
+            backgroundColor: '#F3A29E',
             border: 'none',
             padding: '10px 20px',
             borderRadius: '5px',
@@ -104,9 +108,21 @@ const Login = () => {
           Iniciar sesión
         </button>
       </form>
+
+      {/* Botón para redirigir a la página de registro */}
+      <div style={{ marginTop: '20px' }}>
+        <p>
+          ¿No tienes cuenta?{' '}
+          <Link to="/register" style={{ color: '#F58B85', textDecoration: 'none', fontWeight: 'bold' }}>
+            Registrate aquí
+          </Link>
+        </p>
+      </div>
+      
       {message && <p style={{ marginTop: '20px', color: 'green' }}>{message}</p>}
     </div>
   );
 };
 
 export default Login;
+

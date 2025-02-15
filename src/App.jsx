@@ -6,6 +6,7 @@ import Register from './components/Register';
 import UpdateUser from './components/UpdateUser';
 import DeleteUser from './components/DeleteUser';
 import Logout from './components/Logout';
+import Comments from './components/Comments';
 
 const App = () => {
   return (
@@ -16,9 +17,12 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/terapia-1-1" element={<div style={{textAlign: 'center', marginTop: '50px'}}>Página de Terapia 1:1</div>} />
         <Route path="/terapia-grupal" element={<div style={{textAlign: 'center', marginTop: '50px'}}>Página de Terapia Grupal</div>} />
-        <Route path="/edit-user" element={<UpdateUser />} />
-        <Route path="/delete-user" element={<DeleteUser />} />
+        <Route path="/updateuser" element={<UpdateUser />} />
+        <Route path="/deleteuser" element={<DeleteUser />} />
+        <Route path="/comments" element={<Comments />} />
         <Route path="/logout" element={<Logout />} />
+        
+
         
       </Routes>
     </Router>

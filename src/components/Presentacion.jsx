@@ -3,28 +3,31 @@ const Presentacion = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    flexWrap: 'wrap', 
     width: '100%',
     maxWidth: '1200px',
     margin: 'auto',
-    padding: '40px',
-    backgroundColor: '#F4EDE4', // Beige claro
+    padding: '30px',
+    backgroundColor: '#F4EDE4',
     borderRadius: '12px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   };
 
   const imageStyle = {
-    width: '50%',
+    width: '100%',
     maxWidth: '500px',
     borderRadius: '12px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   };
 
   const textContainerStyle = {
-    width: '50%',
-    paddingLeft: '40px',
-    color: '#6D4C41', // Marrón suave
+    width: '100%',
+    maxWidth: '600px',
+    padding: '20px',
+    color: '#6D4C41',
     fontFamily: 'Arial, sans-serif',
     lineHeight: '1.6',
+    textAlign: 'center', 
   };
 
   return (
@@ -51,5 +54,6 @@ const Presentacion = () => {
 };
 
 export default Presentacion;
+
 
 

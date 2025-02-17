@@ -101,14 +101,15 @@ const Landing = () => {
       }}
     >
       {/* Sección Izquierda: Texto de invitación */}
-      <div style={{ flex: 1, marginRight: '50px' }}>
-        <h1 style={{ fontSize: '3rem', marginBottom: '20px', color: '#4E4039' }}>
+      <div style={{ flex: 1, marginRight: '50px', marginLeft: '37px'}}>
+        <h1 style={{ fontSize: '1.4rem', marginBottom: '50px', color: 'black', }}>
           Únete a nuestra comunidad
         </h1>
-        <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#5C5048' }}>
-          Empieza tu proceso de cambio con nuestras terapias virtuales y presenciales.
-          Queremos acompañarte en tu camino de transformación personal. 
+        <p style={{ fontSize: '3.2rem', lineHeight: '1', color: 'black' }}>
           ¿Listo para dar el primer paso?
+          Empieza tu proceso de cambio con nuestras terapias virtuales y presenciales.
+          
+          
         </p>
       </div>
 

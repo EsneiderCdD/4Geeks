@@ -63,7 +63,7 @@ const Login = () => {
     <div style={{
       maxWidth: '400px',
       margin: '50px auto',
-      backgroundColor: '#F9E8D8',
+      backgroundColor: '#FFC7B9',
       padding: '20px',
       borderRadius: '8px',
       textAlign: 'center'

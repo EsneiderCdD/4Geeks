@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Landing from './components/Landing'; // <-- Nuevo componente
 import Login from './components/Login';
 import Register from './components/Register';
 import UpdateUser from './components/UpdateUser';
@@ -12,7 +13,9 @@ const App = () => {
   return (
     <Router>
       <NavBar />
+      <Landing />
       <Routes>
+       {/* <Route path="/" element={<Landing />} /> Ruta Opcional Home*/}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/terapia-1-1" element={<div style={{textAlign: 'center', marginTop: '50px'}}>Página de Terapia 1:1</div>} />
@@ -21,12 +24,10 @@ const App = () => {
         <Route path="/deleteuser" element={<DeleteUser />} />
         <Route path="/comments" element={<Comments />} />
         <Route path="/logout" element={<Logout />} />
-        
-
-        
       </Routes>
     </Router>
   );
 };
 
 export default App;
+

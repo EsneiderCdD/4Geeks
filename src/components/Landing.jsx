@@ -116,9 +116,9 @@ const Landing = () => {
       <div 
         style={{
           flex: 1,
-          backgroundColor: '#FFF5EE',
+         
           padding: '40px',
-          borderRadius: '10px'
+          
         }}
       >
         <form onSubmit={handleRegister}>
@@ -131,7 +131,7 @@ const Landing = () => {
                 value={formData.user_name}
                 onChange={handleChange}
                 placeholder="Nombre"
-                style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                style={{ width: '100%', padding: '10px', borderRadius: '30px', border: '1px solid black', backgroundColor: 'transparent' }}   
               />
               {errors.user_name && <p style={{ color: 'red' }}>{errors.user_name}</p>}
             </div>
@@ -142,7 +142,7 @@ const Landing = () => {
                 value={formData.user_lastname}
                 onChange={handleChange}
                 placeholder="Apellido"
-                style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                style={{ width: '100%', padding: '10px', borderRadius: '30px', border: '1px solid black', backgroundColor: 'transparent' }}
               />
               {errors.user_lastname && <p style={{ color: 'red' }}>{errors.user_lastname}</p>}
             </div>
@@ -157,7 +157,7 @@ const Landing = () => {
                 value={formData.user_email}
                 onChange={handleChange}
                 placeholder="Correo electrónico"
-                style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                style={{ width: '100%', padding: '10px', borderRadius: '30px', border: '1px solid blach', backgroundColor: 'transparent' }}
               />
               {errors.user_email && <p style={{ color: 'red' }}>{errors.user_email}</p>}
             </div>
@@ -168,7 +168,7 @@ const Landing = () => {
                 value={formData.user_country}
                 onChange={handleChange}
                 placeholder="País"
-                style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                style={{ width: '100%', padding: '10px', borderRadius: '30px', border: '1px solid black' , backgroundColor: 'transparent' }}
               />
               {errors.user_country && <p style={{ color: 'red' }}>{errors.user_country}</p>}
             </div>
@@ -182,8 +182,8 @@ const Landing = () => {
                 name="user_phone"
                 value={formData.user_phone}
                 onChange={handleChange}
-                placeholder="Teléfono (opcional)"
-                style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                placeholder="Teléfono"
+                style={{ width: '100%', padding: '10px', borderRadius: '30px', border: '1px solid black', backgroundColor: 'transparent' }}
               />
               {/* Sin validación adicional por ahora */}
             </div>
@@ -194,7 +194,7 @@ const Landing = () => {
                 value={formData.user_password}
                 onChange={handleChange}
                 placeholder="Contraseña"
-                style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+                style={{ width: '100%', padding: '10px', borderRadius: '30px', border: '1px solid black', backgroundColor: 'transparent' }}
               />
               {errors.user_password && <p style={{ color: 'red' }}>{errors.user_password}</p>}
             </div>
@@ -208,22 +208,22 @@ const Landing = () => {
               value={formData.confirm_password}
               onChange={handleChange}
               placeholder="Confirmar Contraseña"
-              style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
+              style={{ width: '100%', padding: '10px', borderRadius: '30px', border: '1px solid black', backgroundColor: 'transparent' }}
             />
             {errors.confirm_password && <p style={{ color: 'red' }}>{errors.confirm_password}</p>}
           </div>
 
           {/* Botones de Acción */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+          <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
             <button
               type="submit"
               style={{
-                backgroundColor: '#E97777',
+                backgroundColor: 'black',
                 border: 'none',
                 padding: '10px 20px',
-                borderRadius: '5px',
+                borderRadius: '30px',
                 cursor: 'pointer',
-                color: '#fff',
+                color: '#FFC7B9',
                 fontWeight: 'bold'
               }}
             >
@@ -232,12 +232,12 @@ const Landing = () => {
             <button
               type="button"
               style={{
-                backgroundColor: '#FFAFAF',
+                backgroundColor: 'black',
                 border: 'none',
                 padding: '10px 20px',
-                borderRadius: '5px',
+                borderRadius: '30px',
                 cursor: 'pointer',
-                color: '#fff',
+                color: '#FFC7B9',
                 fontWeight: 'bold'
               }}
               onClick={() => alert('Aquí iría la lógica de iniciar sesión')}

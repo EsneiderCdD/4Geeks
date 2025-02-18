@@ -7,7 +7,7 @@ const Calificaciones = () => {
     <div
       className="container-fluid p-3"
       style={{
-        background: 'linear-gradient(135deg, #f5e0d7, #f2d9b3)', // Gradiente de tonos tierra pastel
+        background: 'linear-gradient(135deg, #f5e0d7, #f2d9b3)', 
       }}
     >
       <div className="d-flex flex-column flex-md-row align-items-center justify-content-between">
@@ -19,11 +19,11 @@ const Calificaciones = () => {
             className="mb-2"
             style={{
               borderRadius: '15px',
-              filter: 'blur(0px)', // Asegurarse de que las imágenes no estén borrosas
-              width: '400px', // 20% más ancha
-              height: '250px', // 10% más alta
-              border: '2mm solid #f2d9b3', // Borde redondeado y de 2 mm de ancho
-              backgroundColor: '#f2d9b3', // color pastel de fondo
+              filter: 'blur(0px)', 
+              width: '400px', 
+              height: '250px', 
+              border: '2mm solid #f2d9b3', 
+              backgroundColor: '#f2d9b3', 
             }}
           />
           <img
@@ -31,22 +31,22 @@ const Calificaciones = () => {
             alt="Imagen 2"
             style={{
               borderRadius: '15px',
-              filter: 'blur(0px)', // Asegurarse de que las imágenes no estén borrosas
-              width: '400px', // 20% más ancha
-              height: '250px', // 10% más alta
-              border: '2mm solid #f2d9b3', // Borde redondeado y de 2 mm de ancho
-              backgroundColor: '#f2d9b3', // color pastel de fondo
+              filter: 'blur(0px)', 
+              width: '400px', 
+              height: '250px', 
+              border: '2mm solid #f2d9b3', 
+              backgroundColor: '#f2d9b3', 
             }}
           />
         </div>
 
         {/* Contenedor de la tarjeta centrada */}
-        <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '150%' }}>
+        <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '300%' }}>
           {/* Título encima de la tarjeta */}
           <h2 style={{ marginBottom: '2cm', color: '#4e4a46' }}>Contanos tu experiencia</h2>
 
           {/* Tarjeta de Bootstrap */}
-          <Card style={{ width: '150%', maxWidth: '18rem', backgroundColor: '#f5e0d7' }}>
+          <Card style={{ width: '400%', maxWidth: '20rem', backgroundColor: '#f5e0d7' }}>
             <Card.Body>
               {/* Título dentro de la tarjeta */}
               <Card.Title style={{ color: '#4e4a46' }}>Fecha</Card.Title>

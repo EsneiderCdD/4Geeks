@@ -36,7 +36,7 @@ const Login = () => {
     if (!validate()) return; // Si hay errores, no enviamos la solicitud
 
     try {
-      const response = await axios.post('/api/user/login', {
+      const response = await axios.post('/api/auth/login', {
         user_email: email,
         user_password: password,
       });

@@ -64,7 +64,7 @@ const Landing = () => {
     if (!validate()) return;
 
     try {
-      const response = await axios.post('/api/user/registro', {
+      const response = await axios.post('/api/user/register', {
         user_name: formData.user_name,
         user_lastname: formData.user_lastname,
         user_email: formData.user_email,

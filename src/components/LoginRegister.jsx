@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Landing2 from "./Landing2";
-import Login2 from "./Login2";
+import Landing2 from "./Register";
+import Login2 from "./Login";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LoginRegister = () => {

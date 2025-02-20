@@ -8,17 +8,19 @@ import Presentacion from '../components/Presentacion'
 import TituloSlider from '../components/TituloSlider'
 import DescripcionServicios from '../components/DescripcionServicios'
 import MiCarrusel from '../components/Carrusel'
-import Landing from '../components/Landing'
+import PagoServicios from '../components/PagoServicios'
+
 const Home = () => {
   return (
     <div>
      <Presentacion/>
-     <Landing/>
+    
      <MiCarrusel/>
      <TituloSlider/>
      <Slider/>
      <Acordeon/>
      <DescripcionServicios/>
+     <PagoServicios/>
      <Calificaciones/>
      
       

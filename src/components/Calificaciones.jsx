@@ -43,7 +43,7 @@ const Calificaciones = () => {
         {/* Contenedor de la tarjeta centrada */}
         <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '300%' }}>
           {/* Título encima de la tarjeta */}
-          <h2 style={{ marginBottom: '2cm', color: '#4e4a46' }}>Contanos tu experiencia</h2>
+          <h2 style={{ marginBottom: '2cm', color: '#4e4a46' }}>CUENTANOS TU EXPERIENCIA</h2>
 
           {/* Tarjeta de Bootstrap */}
           <Card style={{ width: '400%', maxWidth: '20rem', backgroundColor: '#f5e0d7' }}>

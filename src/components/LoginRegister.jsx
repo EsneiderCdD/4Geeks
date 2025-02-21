@@ -20,7 +20,7 @@ const LoginRegister = () => {
       style={{
         width: "100%",
         minHeight: "100vh",
-        backgroundColor: "#FFC7B9",
+        backgroundColor: "#E6D5B8",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",

@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const PagoServicios = () => {
   return (
-    <div className="container my-15 p-4" style={{backgroundColor: "#F5DEB3", borderRadius: "0px", width: "100%", marginLeft: "auto", marginRight: "auto", paddingLeft: "0", paddingRight: "0" }}>
+    <div className="container my-15 p-4" style={{backgroundColor: "#F5DEB3", borderRadius: "0px", width: "100%", marginLeft: "0%", marginRight: "0%", paddingLeft: "0%", paddingRight: "0%" }}>
       <div className="row justify-content-between">
         {["1:1 1 Sesion", "1:1 3 Sesiones", "1:1 6 Sesiones", "Grupal"].map((servicio, index) => (
           <div key={index} className="col-md-3 col-sm-6 mb-4">
@@ -24,4 +24,6 @@ const PagoServicios = () => {
 };
 
 export default PagoServicios;
+
+
 

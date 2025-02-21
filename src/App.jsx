@@ -12,6 +12,8 @@ import DeleteUser from './components/DeleteUser';
 import Logout from './components/Logout';
 import Comments from './components/Comments';
 
+import Register from './components/Register';
+
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
       <div>
         <NavbarApp></NavbarApp>
         <LoginRegister></LoginRegister>
+        <Register></Register>
         
         <Routes>
           <Route path='/' element={<Home/>}/>

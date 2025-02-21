@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import axios from '../api/axiosConfig';
 import { motion } from "framer-motion";
-import Login2 from './Login';
+import Login from './Login';
 import CountrySelect from './CountrySelect';
 
 
-const Landing2 = () => {
+const Register = () => {
   // Copiamos la lógica de Register (estados, validaciones, etc.)
   const [formData, setFormData] = useState({
     user_name: '',
@@ -95,7 +95,7 @@ const Landing2 = () => {
 
 };
     if (showLogin) {
-        return <Login2 />;
+        return <Login />;
     }
 
     
@@ -197,12 +197,19 @@ const Landing2 = () => {
         transition={{ duration: 0.5, delay: 0.3 }}
         style={{ flex: 0.4 }} // País menos extenso
       >
-        <CountrySelect
+        <input
+      type="text"
       name="user_country"
       value={formData.user_country}
-      onChange={(selectedOption) =>
-        setFormData({ ...formData, user_country: selectedOption.value })
-      }
+      onChange={handleChange}
+      placeholder="País"
+      style={{
+        width: "100%",
+        padding: "10px",
+        borderRadius: "30px",
+        border: "1px solid black",
+        backgroundColor: "transparent",
+      }}
     />
         {errors.user_country && <p style={{ color: "red" }}>{errors.user_country}</p>}
       </motion.div>
@@ -288,6 +295,7 @@ const Landing2 = () => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        
         type="button"
         style={{
           backgroundColor: "black",
@@ -312,4 +320,4 @@ const Landing2 = () => {
   );
 };  
 
-export default Landing2;
+export default Register;

@@ -2,6 +2,20 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+const handleCheckout = async (productId) => {
+  const response = await fetch("http://localhost:5000/create-checkout-session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ product_id: productId }),  // Enviar el product_id
+  });
+
+  const data = await response.json();
+  if (data.checkout_url) {
+    window.location.href = data.checkout_url;  // Redirige a Stripe
+  }
+};
+
+
 const PagoServicios = () => {
   return (
     <div className="container my-15 p-4" style={{backgroundColor: "#F5DEB3", borderRadius: "0px", width: "100%", marginLeft: "auto", marginRight: "auto", paddingLeft: "0", paddingRight: "0" }}>

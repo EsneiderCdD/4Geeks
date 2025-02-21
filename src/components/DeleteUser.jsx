@@ -16,7 +16,7 @@ const DeleteUser = () => {
     }
 
     try {
-      const response = await axios.delete('/api/user/registro', {
+      const response = await axios.delete('/api/user/delete', {
         headers: {
           Authorization: `Bearer ${token}`
         }

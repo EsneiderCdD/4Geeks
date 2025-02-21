@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from '../api/axiosConfig';
+import { motion } from "framer-motion";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -7,16 +9,17 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
 
-  const validate = () => { //->Validar los campos<-
+  // Función para validar los campos
+  const validate = () => {
     const newErrors = {};
 
-    if (!email.trim()) { // ->Email
+    if (!email.trim()) {
       newErrors.email = 'El correo es obligatorio.';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = 'El correo no es válido.';
     }
 
-    if (!password.trim()) { // ->Password
+    if (!password.trim()) {
       newErrors.password = 'La contraseña es obligatoria.';
     } else if (password.length < 5) {
       newErrors.password = 'La contraseña debe tener al menos 5 caracteres.';
@@ -26,22 +29,24 @@ const Login = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Función de autenticación con el backend
   const handleLogin = async (e) => {
     e.preventDefault();
     setMessage('');
-    if (!validate()) return; // Confirmación de errores
+
+    if (!validate()) return; // Si hay errores, no enviamos la solicitud
 
     try {
-      const response = await axios.post('/api/user/login', {
+      const response = await axios.post('/api/auth/login', {
         user_email: email,
         user_password: password,
       });
-      // Codigo para confirmar Token recibido en consola:
-      // console.log('Token recibido:', response.data.access_token);
-      
+
+      console.log('Token recibido:', response.data.access_token);
+
       if (response.data && response.data.access_token) {
         setMessage(`Inicio de sesión exitoso: Bienvenido ${response.data.user.name} ${response.data.user.lastname}`);
-         localStorage.setItem('access_token', response.data.access_token); // Guardar en localStorage.
+        localStorage.setItem('access_token', response.data.access_token);
       } else {
         setMessage(response.data.message || 'Error desconocido.');
       }
@@ -56,55 +61,116 @@ const Login = () => {
   };
 
   return (
-    <div style={{
-      maxWidth: '400px',
-      margin: '50px auto',
-      backgroundColor: '#F9E8D8', 
-      padding: '20px',
-      borderRadius: '8px',
-      textAlign: 'center'
-    }}>
-      <h2 style={{ marginBottom: '20px' }}>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div style={{ marginBottom: '20px', textAlign: 'left' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>Email:</label>
-          <input 
-            type="email"
-            name="user_email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={{ width: '100%', padding: '8px', borderRadius: '4px' }}
-          />
-          {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
+    <div
+      style={{
+        width: "100%",
+        minHeight: "100vh",
+        backgroundColor: "#FFC7B9",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "50px",
+      }}
+    >
+      {/* Sección Izquierda: Texto de invitación */}
+      <div style={{ flex: 1, marginRight: "50px", marginLeft: "37px" }}>
+        
+        <p style={{ fontSize: "1.4rem", lineHeight: "1", color: "black" }}>
+          Ingresa tu cuenta
+        </p>
+      </div>
+
+      {/* Sección Derecha: Formulario con Animación */}
+      
+
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        style={{
+          flex: 1,
+          padding: "40px",
+        }}
+      >
+
+            
+        <form onSubmit={handleLogin}>
+          {/* Campos de Entrada */}
+          <div>
+            <h2>
+                Login
+            </h2>
+            
+          </div>
+
+
+          {[
+            { name: "email", placeholder: "Correo electrónico", value: email, setter: setEmail, error: errors.email },
+            { name: "password", placeholder: "Contraseña", type: "password", value: password, setter: setPassword, error: errors.password },
+          ].map((input, index) => (
+            <motion.div
+              key={input.name}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              style={{ marginBottom: "15px" }}
+            >
+              <input
+                type={input.type || "text"}
+                name={input.name}
+                value={input.value}
+                onChange={(e) => input.setter(e.target.value)}
+                placeholder={input.placeholder}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  borderRadius: "30px",
+                  border: "1px solid black",
+                  backgroundColor: "transparent",
+                }}
+              />
+              {input.error && <p style={{ color: "red" }}>{input.error}</p>}
+            </motion.div>
+          ))}
+
+          {/* Botón de Iniciar Sesión */}
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "20px" }}
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              type="submit"
+              style={{
+                backgroundColor: "black",
+                border: "none",
+                padding: "10px 20px",
+                borderRadius: "30px",
+                cursor: "pointer",
+                color: "#FFC7B9",
+                fontWeight: "bold",
+              }}
+            >
+              Iniciar sesión
+            </motion.button>
+          </motion.div>
+        </form>
+
+        {/* Enlace a Registro */}
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <p>
+            ¿No tienes cuenta?{' '}
+            <Link to="/register" style={{ color: '#F58B85', textDecoration: 'none', fontWeight: 'bold' }}>
+              Regístrate aquí
+            </Link>
+          </p>
         </div>
-        <div style={{ marginBottom: '20px', textAlign: 'left' }}>
-          <label style={{ display: 'block', marginBottom: '5px' }}>Contraseña:</label>
-          <input 
-            type="password"
-            name="user_password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ width: '100%', padding: '8px', borderRadius: '4px' }}
-          />
-          {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>}
-        </div>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: '#F3A29E', 
-            border: 'none',
-            padding: '10px 20px',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s'
-          }}
-          onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#F58B85'}
-          onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#F3A29E'}
-        >
-          Iniciar sesión
-        </button>
-      </form>
-      {message && <p style={{ marginTop: '20px', color: 'green' }}>{message}</p>}
+
+        {message && <p style={{ marginTop: "20px", color: "green" }}>{message}</p>}
+      </motion.div>
     </div>
   );
 };

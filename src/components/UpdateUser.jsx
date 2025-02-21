@@ -31,7 +31,7 @@ const UpdateUser = () => {
     }
 
     try {
-      const response = await axios.put('/api/user/registro', 
+      const response = await axios.put('/api/user/modify', 
         { new_password: newPassword, new_phone: newPhone },
         {
           headers: { Authorization: `Bearer ${token}` }

@@ -17,8 +17,6 @@ const App = () => {
   return (
 
       <div>
-        <NavbarApp/>
-      
         <NavbarApp></NavbarApp>
         <LoginRegister></LoginRegister>
         

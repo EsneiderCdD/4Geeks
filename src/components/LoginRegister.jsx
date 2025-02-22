@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Landing2 from "./Register";
-import Login2 from "./Login";
+import Register from "./Register";
+import Login from "./Login";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LoginRegister = () => {
@@ -32,17 +32,17 @@ const LoginRegister = () => {
       <div style={{ flex: 1, marginRight: "50px", marginLeft: "37px" }}>
         {view === "home" && (
           <>
-            <h1 style={{ fontSize: "1.4rem", marginBottom: "50px", color: "black" }}>
+            <h1 style={{ fontSize: "1.4rem", marginBottom: "50px", color: "rgba(0, 0, 0, 1)" }}>
               Conecta contigo y con quienes comparten este camino
             </h1>
-            <p style={{ fontSize: "3.2rem", lineHeight: "1", color: "black" }}>
+            <p style={{ fontSize: "3.2rem", lineHeight: "1", color: "rgba(0, 0, 0, 1)" }}>
               ¿Listo para dar el primer paso?
               Explora un camino de autoconocimiento y crecimiento con terapias diseñadas para ti.
             </p>
           </>
         )}
-        {view === "landing2" && <Landing2 />}
-        {view === "login2" && <Login2 />}
+        {view === "register" && <Register />}
+        {view === "login" && <Login />}
       </div>
 
       {/* Sección Derecha: Botones de navegación */}
@@ -62,9 +62,9 @@ const LoginRegister = () => {
           >
             {/* Botón Registro */}
             <motion.button
-              whileHover={{ scale: 1.1, backgroundColor: "black" }}
+              whileHover={{ scale: 1.1, backgroundColor: "rgba(0, 0, 0, 1)" }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => handleNavigation("landing2")}
+              onClick={() => handleNavigation("register")}
               initial={{ x: 0 }}
               animate={{ x: 0 }}
               exit={{ x: 300, opacity: 0, transition: { duration: 0.5 } }} // Se mueve fuera de la pantalla
@@ -85,9 +85,9 @@ const LoginRegister = () => {
 
             {/* Botón Login */}
             <motion.button
-              whileHover={{ scale: 1.1, backgroundColor: "black" }}
+              whileHover={{ scale: 1.1, backgroundColor: "rgba(0, 0, 0, 1)" }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => handleNavigation("login2")}
+              onClick={() => handleNavigation("login")}
               initial={{ x: 0 }}
               animate={{ x: 0 }}
               exit={{ x: -300, opacity: 0, transition: { duration: 0.5 } }} // Se mueve fuera en dirección contraria

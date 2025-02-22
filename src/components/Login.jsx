@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from '../api/axiosConfig';
 import { motion } from "framer-motion";
 
-const Login2 = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -175,4 +175,4 @@ const Login2 = () => {
   );
 };
 
-export default Login2;
+export default Login;

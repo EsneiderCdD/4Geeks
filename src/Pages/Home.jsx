@@ -9,12 +9,19 @@ import TituloSlider from '../components/TituloSlider'
 import DescripcionServicios from '../components/DescripcionServicios'
 import MiCarrusel from '../components/Carrusel'
 import PagoServicios from '../components/PagoServicios'
+import LoginRegister from '../components/LoginRegister'
+import NavbarApp from '../components/NavbarApp'
+
+
+
+
 
 const Home = () => {
   return (
     <div>
+     <NavbarApp/>
      <Presentacion/>
-    
+     <LoginRegister/>
      <MiCarrusel/>
      <TituloSlider/>
      <Slider/>
@@ -22,8 +29,7 @@ const Home = () => {
      <DescripcionServicios/>
      <PagoServicios/>
      <Calificaciones/>
-     
-      
+
     </div>
   )
 }

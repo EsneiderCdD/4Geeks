@@ -7,7 +7,7 @@ const Calificaciones = () => {
     <div
       className="container-fluid p-3"
       style={{
-        background: 'linear-gradient(135deg, #f1e2c6, #d3b79d, #c9a18b, #a88b72)',
+        background: 'linear-gradient(135deg, #e6d5b8, #d1b1a3, #c7a89c, #b58e82)', // Tonalidades tierra pastel
         backgroundImage: 'url(https://www.transparenttextures.com/patterns/paper-fibers.png)',
         backgroundSize: 'cover',
       }}
@@ -24,8 +24,8 @@ const Calificaciones = () => {
               filter: 'blur(0px)', 
               width: '400px', 
               height: '250px', 
-              border: '2mm solid #d3b79d', 
-              backgroundColor: '#d3b79d', 
+              border: '2mm solid #d1b1a3', // Alineado con el fondo pastel
+              backgroundColor: '#d1b1a3', 
               marginLeft: '0cm' 
             }}
           />
@@ -37,8 +37,8 @@ const Calificaciones = () => {
               filter: 'blur(0px)', 
               width: '400px', 
               height: '250px', 
-              border: '2mm solid #d3b79d', 
-              backgroundColor: '#d3b79d', 
+              border: '2mm solid #d1b1a3', 
+              backgroundColor: '#d1b1a3', 
               marginLeft: '3cm'
             }}
           />
@@ -50,14 +50,14 @@ const Calificaciones = () => {
           <h2 style={{ marginBottom: '2cm', color: '#5e524a' }}>CUÉNTANOS TU EXPERIENCIA</h2>
 
           {/* Tarjeta de Bootstrap */}
-          <Card style={{ width: '520%', maxWidth: '26rem', backgroundColor: '#f1e2c6' }}>
+          <Card style={{ width: '520%', maxWidth: '26rem', backgroundColor: '#e6d5b8' }}>
             <Card.Body>
               {/* Título dentro de la tarjeta */}
               <Card.Title style={{ color: '#5e524a' }}>Fecha</Card.Title>
 
               {/* Estrellas de valoración */}
               <div className="d-flex align-items-center mb-4">
-                <span style={{ color: '#a88b72', fontSize: '2rem' }}>★★★★★</span>
+                <span style={{ color: '#b58e82', fontSize: '2rem' }}>★★★★★</span>
               </div>
 
               {/* Párrafo */}
@@ -66,7 +66,7 @@ const Calificaciones = () => {
               </Card.Text>
 
               {/* Nombre */}
-              <Card.Footer className="text-muted" style={{ backgroundColor: '#f1e2c6' }}>
+              <Card.Footer className="text-muted" style={{ backgroundColor: '#e6d5b8' }}>
                 Nombre de clienta
               </Card.Footer>
             </Card.Body>

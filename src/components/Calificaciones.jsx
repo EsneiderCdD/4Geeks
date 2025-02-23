@@ -7,10 +7,12 @@ const Calificaciones = () => {
     <div
       className="container-fluid p-3"
       style={{
-        background: 'linear-gradient(135deg, #f5e0d7, #f2d9b3)', 
+        background: 'linear-gradient(135deg, #f1e2c6, #d3b79d, #c9a18b, #a88b72)',
+        backgroundImage: 'url(https://www.transparenttextures.com/patterns/paper-fibers.png)',
+        backgroundSize: 'cover',
       }}
     >
-      <div className="d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <div className="d-flex flex-column flex-md-row align-items-center justify-content-between p-3">
         {/* Contenedor de imágenes */}
         <div className="d-flex flex-column me-4 mb-4 mb-md-0">
           <img
@@ -22,8 +24,9 @@ const Calificaciones = () => {
               filter: 'blur(0px)', 
               width: '400px', 
               height: '250px', 
-              border: '2mm solid #f2d9b3', 
-              backgroundColor: '#f2d9b3', 
+              border: '2mm solid #d3b79d', 
+              backgroundColor: '#d3b79d', 
+              marginLeft: '0cm' 
             }}
           />
           <img
@@ -34,8 +37,9 @@ const Calificaciones = () => {
               filter: 'blur(0px)', 
               width: '400px', 
               height: '250px', 
-              border: '2mm solid #f2d9b3', 
-              backgroundColor: '#f2d9b3', 
+              border: '2mm solid #d3b79d', 
+              backgroundColor: '#d3b79d', 
+              marginLeft: '3cm'
             }}
           />
         </div>
@@ -43,17 +47,17 @@ const Calificaciones = () => {
         {/* Contenedor de la tarjeta centrada */}
         <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '300%' }}>
           {/* Título encima de la tarjeta */}
-          <h2 style={{ marginBottom: '2cm', color: '#4e4a46' }}>CUENTANOS TU EXPERIENCIA</h2>
+          <h2 style={{ marginBottom: '2cm', color: '#5e524a' }}>CUÉNTANOS TU EXPERIENCIA</h2>
 
           {/* Tarjeta de Bootstrap */}
-          <Card style={{ width: '400%', maxWidth: '20rem', backgroundColor: '#f5e0d7' }}>
+          <Card style={{ width: '520%', maxWidth: '26rem', backgroundColor: '#f1e2c6' }}>
             <Card.Body>
               {/* Título dentro de la tarjeta */}
-              <Card.Title style={{ color: '#4e4a46' }}>Fecha</Card.Title>
+              <Card.Title style={{ color: '#5e524a' }}>Fecha</Card.Title>
 
               {/* Estrellas de valoración */}
               <div className="d-flex align-items-center mb-4">
-                <span style={{ color: '#f3c28c' }}>★★★★★</span>
+                <span style={{ color: '#a88b72', fontSize: '2rem' }}>★★★★★</span>
               </div>
 
               {/* Párrafo */}
@@ -62,7 +66,7 @@ const Calificaciones = () => {
               </Card.Text>
 
               {/* Nombre */}
-              <Card.Footer className="text-muted" style={{ backgroundColor: '#f5e0d7' }}>
+              <Card.Footer className="text-muted" style={{ backgroundColor: '#f1e2c6' }}>
                 Nombre de clienta
               </Card.Footer>
             </Card.Body>
@@ -74,6 +78,8 @@ const Calificaciones = () => {
 };
 
 export default Calificaciones;
+
+
 
 
 

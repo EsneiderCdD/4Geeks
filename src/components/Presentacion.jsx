@@ -35,7 +35,7 @@ const Presentacion = () => {
   return (
     <div style={containerStyle}>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwNpoWSi1dRcZYTrlzbPb0zmfhh5SBbG2fFg&s" 
+        src="/public/imagenes/Psicologa.png" 
         alt="Imagen de presentación"
         style={imageStyle}
       />

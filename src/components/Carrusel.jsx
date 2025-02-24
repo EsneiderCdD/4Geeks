@@ -13,8 +13,8 @@ function MiCarrusel() {
               alt="First slide"
             />
             <Carousel.Caption>
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h5>Avanza</h5>
+              <p>Para ti y por ti.</p>
             </Carousel.Caption>
           </div>
         </Carousel.Item>
@@ -28,8 +28,8 @@ function MiCarrusel() {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5 style={{color: 'white'}}>Florece</h5>
+            <p style={{ color: 'white' }}>Se tu propio florecimiento.</p>
             </Carousel.Caption>
           </div>
         </Carousel.Item>
@@ -43,8 +43,9 @@ function MiCarrusel() {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <h5 style={{color: 'white'}}>Tu espacio</h5>
+              <p style={{ color: 'white' }}>Armoniza tu espacio.</p>
+
             </Carousel.Caption>
           </div>
         </Carousel.Item>

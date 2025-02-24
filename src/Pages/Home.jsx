@@ -19,7 +19,7 @@ import NavbarApp from '../components/NavbarApp'
 const Home = () => {
   return (
     <div>
-     <NavbarApp/>
+     
      <Presentacion/>
      <LoginRegister/>
      <MiCarrusel/>

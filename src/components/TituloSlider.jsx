@@ -10,7 +10,8 @@ const TituloSlider = () => {
       justifyContent: 'center', 
       alignItems: 'center',
       textAlign: 'center',
-      borderRadius: '8px'
+      borderRadius: '8px',
+      
     }}>
       <h1 style={{
         margin: 0,

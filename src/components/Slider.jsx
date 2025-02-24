@@ -20,13 +20,13 @@ export default function Slider() {
     <div style={{
       position: "relative",
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "space-around",
       alignItems: "center",
-      height: "16rem",
+      height: "20rem",
       width: "100%",
       backgroundColor: "#E6D5B8",
       overflow: "hidden",
-      pading:'5%'
+      paddingLeft: "20%"
     }}>
       {images.map((img, i) => (
         <div
@@ -46,7 +46,7 @@ export default function Slider() {
             left: i === 0 ? "10%" : i === 1 ? "35%" : "60%",
             transform: `translateY(${i === index ? "0" : "50px"})`,
             opacity: i === index ? 1 : 0,
-            pading:'5%'
+            padding:'5%'
           }}
         >
           <img src={img.src} alt={img.title} style={{
@@ -54,7 +54,7 @@ export default function Slider() {
             height: "12rem",
             borderRadius: "50%",
             objectFit: "cover",
-            pading:'5%'
+            
           }} />
           <p style={{
             marginTop: "0.5rem",
@@ -62,7 +62,7 @@ export default function Slider() {
             color: "#4A2C2A",
             fontWeight: "600",
             textAlign: "center",
-            pading:'5%'
+            
           }}>{img.title}</p>
         </div>
       ))}

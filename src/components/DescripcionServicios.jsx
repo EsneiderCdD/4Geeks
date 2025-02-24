@@ -20,7 +20,8 @@ const DescripcionServicios = ({ imagen, titulo, texto, invertido }) => {
         borderRadius: "10px",
         opacity: visible ? 1 : 0,
         transition: "opacity 1s ease-in-out",
-        pading:"10%"
+        marginTop:"10%",
+        
       }}
     >
       <img
@@ -31,12 +32,13 @@ const DescripcionServicios = ({ imagen, titulo, texto, invertido }) => {
           height: "250px",
           borderRadius: "10px",
           objectFit: "cover",
-          pading:'10%'
+          marginTop:"1rem"
+          
         }}
       />
       <div>
-        <h2 style={{ color: "#5D4037", margin: "0",padding:"5%"}}>{titulo}</h2>
-        <p style={{ color: "#795548", margin: "5px 0" ,padding:"5%"}}>{texto}</p>
+        <h2 style={{ color: "#5D4037", margin: "0"}}>{titulo}</h2>
+        <p style={{ color: "#795548", margin: "5px 0" }}>{texto}</p>
       </div>
     </div>
   );

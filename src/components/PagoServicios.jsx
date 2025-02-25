@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { body } from "framer-motion/client";
 
 const PagoServicios = () => {
   const [servicios, setServicios] = useState([]);
@@ -7,7 +8,7 @@ const PagoServicios = () => {
   useEffect(() => {
     const fetchServicios = async () => {
       try {
-        const response = await fetch("http://localhost:5000/servicios"); // cual es la url para hacer el fetch?
+        const response = await fetch("http://localhost:2000/stripe/get_products"); // cual es la url para hacer el fetch?
         const data = await response.json();
         setServicios(data);
       } catch (error) {
@@ -17,14 +18,18 @@ const PagoServicios = () => {
     fetchServicios();
   }, []);
 
-  const handleCheckout = async (priceId) => {
+    const handleCheckout = async (priceId) => {
     try {
-      const response = await fetch("http://localhost:5000/create-checkout-session", {
+      const body = JSON.stringify({ price_id: priceId });
+      console.log("Body enviado:", body);
+      const response = await fetch("http://localhost:2000/stripe/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ price_id: priceId }),
+        body,
+        
       });
       
+
       const data = await response.json();
       if (data.checkout_url) {
         window.location.href = data.checkout_url;
@@ -37,16 +42,17 @@ const PagoServicios = () => {
     }
   };
 
+
   return (
     <div className="container my-5 p-4" style={{ backgroundColor: "#F5DEB3", borderRadius: "12px" }}>
       <div className="row justify-content-center">
         {servicios.map((servicio) => (
-          <div key={servicio.id} className="col-md-3 col-sm-6 mb-4">
+          <div key={servicio.product_id} className="col-md-3 col-sm-6 mb-4">
             <div className="card text-center shadow" style={{ backgroundColor: "#D2B48C", borderRadius: "12px" }}>
               <div className="card-body">
-                <h4 className="card-title" style={{ fontFamily: "Georgia, serif" }}>{servicio.nombre}</h4>
+                <h4 className="card-title" style={{ fontFamily: "Georgia, serif" }}>{servicio.name}</h4>
                 <p className="card-text">Realiza el pago de tu servicio fácilmente.</p>
-                <h2>${servicio.precio}</h2>
+                <h2>${servicio.price}</h2>
                 <button className="btn btn-dark" onClick={() => handleCheckout(servicio.price_id)}>Pagar</button>
               </div>
             </div>

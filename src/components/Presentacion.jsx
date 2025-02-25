@@ -2,34 +2,34 @@ const Presentacion = () => {
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    flexWrap: 'wrap', 
-    width:  '100vw',
+    justifyContent: 'space-between', // Asegura que estén alineados sin superponerse
+    width: '100%',
     maxWidth: '1200px',
-    maxWidth: 'none',
-    marging : '0%',
-    padding: '0px',
+    margin: '0 auto',
+    padding: '20px',
     backgroundColor: '#F4EDE4',
     borderRadius: '12px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    gap: '20px', // Espacio entre la imagen y el texto
   };
 
   const imageStyle = {
-    width: '100%',
+    flex: '1', // Ocupa el espacio disponible sin exceder
     maxWidth: '500px',
     borderRadius: '12px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    padding:'5%'
+    padding: '5%',
+    objectFit: 'cover',
   };
 
   const textContainerStyle = {
-    width: '100%',
+    flex: '1', // Ocupa el espacio disponible sin exceder
     maxWidth: '600px',
     padding: '20px',
     color: '#6D4C41',
     fontFamily: 'Arial, sans-serif',
     lineHeight: '1.6',
-    textAlign: 'center', 
+    textAlign: 'left', 
   };
 
   return (
@@ -56,6 +56,7 @@ const Presentacion = () => {
 };
 
 export default Presentacion;
+
 
 
 

@@ -49,21 +49,21 @@ const Contenedor = () => {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        gap: "20px",
+        gap: "5px",
         flexWrap: "wrap",
-        padding: "20px",
+        padding: "5px",
       }}
     >
       <DescripcionServicios
         imagen="/public/imagenes/cuerpo.png"
         titulo="Terapia 1:1"
-        texto="La terapia psicotranspersonal individual es un enfoque que integra la psicología con aspectos espirituales y filosóficos para promover un crecimiento más allá de la identidad personal."
+        texto="La terapia psicotranspersonal individual integra la psicología con la espiritualidad para facilitar el autoconocimiento, la sanación y la expansión de la conciencia."
         invertido={false}
       />
       <DescripcionServicios
         imagen="/public/imagenes/manos.png"
         titulo="Terapia grupal"
-        texto="La terapia psicotranspersonal grupal es un enfoque que integra la psicología con aspectos espirituales y filosóficos para promover un crecimiento más allá de la identidad personal."
+        texto="La terapia psicotranspersonal grupal fomenta el crecimiento personal y la conexión colectiva a través de la exploración de la conciencia y la transformación interior."
         invertido={true}
       />
     </div>

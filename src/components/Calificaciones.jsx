@@ -35,8 +35,8 @@ const Calificaciones = () => {
             style={{
               borderRadius: '15px',
               filter: 'blur(0px)', 
-              width: '400px', 
-              height: '500px', 
+              width: '350px', 
+              height: '450px', 
               border: '2mm solid #d1b1a3', 
               backgroundColor: '#d1b1a3', 
               marginLeft: '3cm'

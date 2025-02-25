@@ -2,40 +2,40 @@ const Presentacion = () => {
   const containerStyle = {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    flexWrap: 'wrap', 
-    width:  '100vw',
-    maxWidth: '1200px',
-    maxWidth: 'none',
-    marging : '0%',
-    padding: '0px',
+    justifyContent: 'space-between',
+    width: '100vw', // Ocupar toda la anchura de la pantalla
+    margin: '0', // Eliminar márgenes
+    padding: '40px', // Espaciado para evitar que el contenido toque los bordes
     backgroundColor: '#F4EDE4',
-    borderRadius: '12px',
+    borderRadius: '0', // Quitar bordes redondeados para ajustarse a los extremos
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    gap: '20px',
+    boxSizing: 'border-box', // Asegurar que el padding no afecte el ancho total
   };
 
   const imageStyle = {
-    width: '100%',
+    flex: '1',
     maxWidth: '500px',
     borderRadius: '12px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    padding:'5%'
+    padding: '5%',
+    objectFit: 'cover',
   };
 
   const textContainerStyle = {
-    width: '100%',
+    flex: '1',
     maxWidth: '600px',
-    padding: '20px',
+    padding: '10px',
     color: '#6D4C41',
     fontFamily: 'Arial, sans-serif',
     lineHeight: '1.6',
-    textAlign: 'center', 
+    textAlign: 'left',
   };
 
   return (
     <div style={containerStyle}>
       <img
-        src="/public/imagenes/Psicologa.png" 
+        src="/public/imagenes/Psicologa.png"
         alt="Imagen de presentación"
         style={imageStyle}
       />
@@ -56,6 +56,7 @@ const Presentacion = () => {
 };
 
 export default Presentacion;
+
 
 
 

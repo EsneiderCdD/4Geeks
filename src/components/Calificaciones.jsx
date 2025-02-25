@@ -16,7 +16,7 @@ const Calificaciones = () => {
         {/* Contenedor de imágenes */}
         <div className="d-flex flex-column me-4 mb-4 mb-md-0">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ceURTHBfmEO-_Ak92M27nEWGbYlpyLhraA&s"
+            src="/public/imagenes/campo.png"
             alt="Imagen 1"
             className="mb-2"
             style={{
@@ -30,13 +30,13 @@ const Calificaciones = () => {
             }}
           />
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTihZpKTSGzYyJ4cbe3l-pPX36MH-45XYW7Yw&s"
+            src="/public/imagenes/grupo.png"
             alt="Imagen 2"
             style={{
               borderRadius: '15px',
               filter: 'blur(0px)', 
-              width: '400px', 
-              height: '250px', 
+              width: '350px', 
+              height: '450px', 
               border: '2mm solid #d1b1a3', 
               backgroundColor: '#d1b1a3', 
               marginLeft: '3cm'
@@ -47,7 +47,7 @@ const Calificaciones = () => {
         {/* Contenedor de la tarjeta centrada */}
         <div className="d-flex flex-column justify-content-center align-items-center" style={{ width: '300%' }}>
           {/* Título encima de la tarjeta */}
-          <h2 style={{ marginBottom: '2cm', color: '#5e524a' }}>CUÉNTANOS TU EXPERIENCIA</h2>
+          <h2 style={{ marginBottom: '4cm', color: '#5e524a' }}>CUÉNTANOS TU EXPERIENCIA</h2>
 
           {/* Tarjeta de Bootstrap */}
           <Card style={{ width: '520%', maxWidth: '26rem', backgroundColor: '#e6d5b8' }}>

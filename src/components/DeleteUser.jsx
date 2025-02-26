@@ -8,7 +8,7 @@ const DeleteUser = () => {
     e.preventDefault();
     setMessage('');
 
-    const token = localStorage.getItem('access_token'); // Recuperar el token JWT del almacenamiento local
+    const token = sessionStorage.getItem('access_token'); // Recuperar el token JWT del almacenamiento local
     console.log('Token en DeleteUser:', token);
     if (!token) {
       setMessage('Debes iniciar sesión para eliminar tu cuenta.');

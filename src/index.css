@@ -70,3 +70,32 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.btn-avatar:hover {
+  opacity: 0.8;
+}
+
+/* Animación de apertura */
+.dropdown-animate {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeDropdown 0.3s forwards;
+}
+
+/* Animación de cierre */
+.dropdown-animate-hide {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeDropdown 0.5s reverse forwards;
+}
+
+@keyframes fadeDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

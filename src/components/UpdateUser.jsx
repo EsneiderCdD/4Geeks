@@ -24,7 +24,7 @@ const UpdateUser = () => {
     setMessage('');
     if (!validate()) return;
 
-    const token = localStorage.getItem('access_token'); // Recuperar localStorage
+    const token = sessionStorage.getItem('access_token'); // Recuperar sessionStorage
     if (!token) {
       setMessage('Debes iniciar sesión para modificar tus datos.');
       return;

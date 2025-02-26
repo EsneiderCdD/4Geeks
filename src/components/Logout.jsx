@@ -5,7 +5,7 @@ const Logout = () => {
 
   const handleLogout = () => {
     
-    localStorage.removeItem('access_token'); // Borrar Token
+    sessionStorage.removeItem('access_token'); // Borrar Token
     setMessage('Sesión cerrada. Por favor, inicie sesión nuevamente.');
     // Opcional: Puedo forzar un refresh de la página con window.location.reload()
     // window.location.reload();

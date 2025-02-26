@@ -30,7 +30,7 @@ const Comments = () => {
       return;
     }
 
-    const token = localStorage.getItem('access_token'); // Recupera el Token
+    const token = sessionStorage.getItem('access_token'); // Recupera el Token
     if (!token) {
       setMessage('Debes iniciar sesión para comentar.');
       return;

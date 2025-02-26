@@ -32,9 +32,13 @@ const Login = () => {
   // Función de autenticación con el backend
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("Intentando loguear...");
     setMessage('');
 
-    if (!validate()) return; // Si hay errores, no enviamos la solicitud
+    if (!validate()) {
+      console.log("Error de validación. No se envió la solicitud.");
+      return;
+    }
 
     try {
       const response = await axios.post('/api/auth/login', {
@@ -42,21 +46,22 @@ const Login = () => {
         user_password: password,
       });
 
-      console.log('Token recibido:', response.data.access_token);
-
       if (response.data && response.data.access_token) {
         setMessage(`Inicio de sesión exitoso: Bienvenido ${response.data.user.name} ${response.data.user.lastname}`);
-        localStorage.setItem('access_token', response.data.access_token);
+        
+        sessionStorage.setItem('access_token', response.data.access_token);
+        sessionStorage.setItem('user_avatar', response.data.user.avatar);
+
+        
+        setTimeout(() => {
+          window.dispatchEvent(new Event("avatarChange"));
+        }, 100);
       } else {
         setMessage(response.data.message || 'Error desconocido.');
       }
     } catch (error) {
       console.error('Error en la solicitud:', error);
-      if (error.response && error.response.data && error.response.data.message) {
-        setMessage(error.response.data.message);
-      } else {
-        setMessage('No se pudo conectar con el servidor.');
-      }
+      setMessage(error.response?.data?.message || 'No se pudo conectar con el servidor.');
     }
   };
 

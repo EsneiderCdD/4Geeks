@@ -44,7 +44,7 @@ const PagoServicios = () => {
   return (
     <div className="container my-5 p-4" style={{ backgroundColor: "#F5DEB3", borderRadius: "12px" }}>
       <div className="row justify-content-center">
-        {servicios.map((servicio) => (
+        {servicios.sort((a, b) => a.name.localeCompare(b.name)).map((servicio) => (
           <div key={servicio.product_id} className="col-md-3 col-sm-6 mb-4">
             <div className="card text-center shadow" style={{ backgroundColor: "#D2B48C", borderRadius: "12px" }}>
               <div className="card-body">

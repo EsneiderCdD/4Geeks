@@ -1,0 +1,62 @@
+/* AdminOptions.css */
+
+.dashboard-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dashboard-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 26px;
+    max-width: 900px;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .option-card {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 16px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .option-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .option-image {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .option-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-top: 0;
+  }
+  
+  .option-description {
+    color: #555;
+    font-size: 13px;
+    margin-top: 0;
+  }
+  

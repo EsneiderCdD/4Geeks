@@ -55,13 +55,13 @@ const Contenedor = () => {
       }}
     >
       <DescripcionServicios
-        imagen="/public/imagenes/cuerpo.png"
+        imagen="/imagenes/cuerpo.png"
         titulo="Terapia 1:1"
         texto="La terapia psicotranspersonal individual integra la psicología con la espiritualidad para facilitar el autoconocimiento, la sanación y la expansión de la conciencia."
         invertido={false}
       />
       <DescripcionServicios
-        imagen="/public/imagenes/manos.png"
+        imagen="/imagenes/manos.png"
         titulo="Terapia grupal"
         texto="La terapia psicotranspersonal grupal fomenta el crecimiento personal y la conexión colectiva a través de la exploración de la conciencia y la transformación interior."
         invertido={true}

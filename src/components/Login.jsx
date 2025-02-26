@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import axios from '../api/axiosConfig';
 import { motion } from "framer-motion";
 
+import { useNavigate } from "react-router-dom";
+
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
+
+  const navigate = useNavigate();
 
   // Función para validar los campos
   const validate = () => {
@@ -45,8 +50,21 @@ const Login = () => {
         user_email: email,
         user_password: password,
       });
-
-      if (response.data && response.data.access_token) {
+  
+      const token = response.data.access_token;
+      console.log('Token recibido:', token);
+  
+      // 🟢 GUARDAR EL TOKEN EN LOCALSTORAGE
+      localStorage.setItem("accessToken", token);
+      localStorage.setItem("userRole", response.data.user.role);
+  
+      if (response.data.user.role === "admin") {
+        console.log("Redirigiendo a /admin");
+        navigate('/admin');  
+      } else if (response.data.user.role === "user") { 
+        console.log("Redirigiendo a /user");
+        navigate('/user');  
+      } else {
         setMessage(`Inicio de sesión exitoso: Bienvenido ${response.data.user.name} ${response.data.user.lastname}`);
         
         sessionStorage.setItem('access_token', response.data.access_token);
@@ -56,8 +74,6 @@ const Login = () => {
         setTimeout(() => {
           window.dispatchEvent(new Event("avatarChange"));
         }, 100);
-      } else {
-        setMessage(response.data.message || 'Error desconocido.');
       }
     } catch (error) {
       console.error('Error en la solicitud:', error);
@@ -164,15 +180,6 @@ const Login = () => {
           </motion.div>
         </form>
 
-        {/* Enlace a Registro */}
-        <div style={{ marginTop: "20px", textAlign: "center" }}>
-          <p>
-            ¿No tienes cuenta?{' '}
-            <Link to="/register" style={{ color: '#F58B85', textDecoration: 'none', fontWeight: 'bold' }}>
-              Regístrate aquí
-            </Link>
-          </p>
-        </div>
 
         {message && <p style={{ marginTop: "20px", color: "green" }}>{message}</p>}
       </motion.div>

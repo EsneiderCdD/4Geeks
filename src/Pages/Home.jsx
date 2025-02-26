@@ -16,10 +16,11 @@ import NavbarApp from '../components/NavbarApp'
 
 
 
+
 const Home = () => {
   return (
     <div>
-     
+     <NavbarApp/>
      <Presentacion/>
      <LoginRegister/>
      <MiCarrusel/>
@@ -29,7 +30,7 @@ const Home = () => {
      <DescripcionServicios/>
      <PagoServicios/>
      <Calificaciones/>
-
+     
     </div>
   )
 }

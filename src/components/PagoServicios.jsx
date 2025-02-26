@@ -50,10 +50,10 @@ const PagoServicios = () => {
           <div key={servicio.product_id} className="col-md-3 col-sm-6 mb-4">
             <div className="card text-center shadow" style={{ backgroundColor: "#D2B48C", borderRadius: "12px" }}>
               <div className="card-body">
+                <div><img src={servicio.images} alt={servicio.name} className="img-fluid rounded-3xl mb-3"/></div>
                 <h4 className="card-title" style={{ fontFamily: "Georgia, serif" }}>{servicio.name}</h4>
-                <p className="card-text">Realiza el pago de tu servicio fácilmente.</p>
                 <h2>${servicio.price}</h2>
-                <button className="btn btn-dark" onClick={() => handleCheckout(servicio.price_id)}>Pagar</button>
+                <button className="btn btn-dark mt-3" onClick={() => handleCheckout(servicio.price_id)}>Pagar</button>
               </div>
             </div>
           </div>

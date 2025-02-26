@@ -29,7 +29,6 @@ const PagoServicios = () => {
         
       });
       
-
       const data = await response.json();
       if (data.checkout_url) {
         window.location.href = data.checkout_url;
@@ -41,7 +40,6 @@ const PagoServicios = () => {
       alert("Hubo un problema al conectar con el servidor.");
     }
   };
-
 
   return (
     <div className="container my-5 p-4" style={{ backgroundColor: "#F5DEB3", borderRadius: "12px" }}>

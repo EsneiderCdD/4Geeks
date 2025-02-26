@@ -24,7 +24,7 @@ const Calificaciones = () => {
     useEffect(() => {
       if (comentarios.length > 0) {
         const interval = setInterval(() => {
-          setCurrentIndex((prev) => (prev + 2) % comentarios.length);
+          setCurrentIndex((prev) => (prev + 1) % comentarios.length);
         }, 5000);
         
         return () => clearInterval(interval);
@@ -39,10 +39,10 @@ const Calificaciones = () => {
         }}
       >
         <div className="row">
-          {/* 📌 PRIMER DIV: Contenedor de imágenes */}
+          {/* DIV: Contenedor de imágenes */}
           <div className="col-md-5 d-flex flex-column align-items-center">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ceURTHBfmEO-_Ak92M27nEWGbYlpyLhraA&s"
+              src="/imagenes/grupo.png"
               alt="Imagen 1"
               className="mb-3"
               style={{
@@ -55,7 +55,7 @@ const Calificaciones = () => {
               }}
             />
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTihZpKTSGzYyJ4cbe3l-pPX36MH-45XYW7Yw&s"
+              src="/imagenes/campo.png"
               alt="Imagen 2"
               style={{
                 borderRadius: '15px',
@@ -68,7 +68,7 @@ const Calificaciones = () => {
             />
           </div>
   
-          {/* 📌 SEGUNDO DIV: Contenedor de título y comentarios */}
+          {/* DIV: Contenedor de título y comentarios */}
           <div className="col-md-7 text-center">
             {/* Título */}
             <h2 className="mb-5" style={{ color: '#5e524a', fontSize: '2.5rem', fontWeight: 'bold' }}>

@@ -5,6 +5,7 @@ import mentoring from "../../gifs/mentoring.gif";
 import comment from "../../gifs/comment.gif";
 import form from "../../gifs/form.gif";
 
+
 const OptionCard = ({ title, description, imageUrl, onClick }) => {
   return (
     <div className="user-option-card" onClick={onClick} style={{ cursor: "pointer" }}>
@@ -30,6 +31,7 @@ const UserOptions = () => {
           ].map((item, index) => (
             <OptionCard key={index} {...item} />
           ))}
+          
         </div>
       </main>
     </div>

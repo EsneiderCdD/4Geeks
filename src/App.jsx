@@ -4,7 +4,6 @@ import Home from './Pages/Home';
 import Admin from './Pages/Admin';
 import User from './Pages/User';
 import UserList from '../src/components/InteractiveOptions/UserList';
-import CommentSection from '../src/components/Comments/CommentSection';
 
 
 const App = () => {
@@ -15,9 +14,11 @@ const App = () => {
         <Route path='/user' element={<User/>} />
         <Route path= '/admin/users' element={<UserList/>} />
 
-        <Route path="/user/comments" element={<CommentSection />} />
+       
+       
+        
 
-
+        
       
       </Routes>
     

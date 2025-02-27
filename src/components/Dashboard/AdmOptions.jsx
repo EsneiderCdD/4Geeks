@@ -38,6 +38,7 @@ const AdminOptions = () => {
             title="Comentarios"
             description="Revisa y gestiona los comentarios recibidos."
             imageUrl={comments}
+            onClick={() => navigate("/admin/comments")}
           />
           <OptionCard
             title="Precios / Servicios"

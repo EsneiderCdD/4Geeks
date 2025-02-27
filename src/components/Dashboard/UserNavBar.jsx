@@ -1,5 +1,6 @@
 // UserNavBar.jsx
 import "../../styles/UserNavBar.css";
+import LogoutButton from "../LogoutButton";
 
 const UserNavBar = () => {
   return (
@@ -23,11 +24,7 @@ const UserNavBar = () => {
             description
         </span>
         </button>
-        <button className="user-nav-button">
-        <span className="material-icons">
-          logout
-        </span>
-        </button>
+        <LogoutButton />
       </div>
     </nav>
   );

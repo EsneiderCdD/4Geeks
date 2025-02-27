@@ -1,5 +1,6 @@
 // AdmNavBar.jsx
 import "../../styles/AdmNavBar.css";
+import LogoutButton from "../LogoutButton";
 
 const AdmNavBar = () => {
   return (
@@ -34,11 +35,8 @@ const AdmNavBar = () => {
           bar_chart
         </span>
         </button>
-        <button className="nav-button">
-        <span className="material-icons">
-          logout
-        </span>
-        </button>
+        <LogoutButton />
+        
       </div>
     </nav>
   );

@@ -11,7 +11,7 @@ const Calificaciones = () => {
   useEffect(() => {
       const fetchComentarios = async () => {
         try {
-          const response = await fetch("https://proyecto-final-backend-pink.vercel.app/api/comments"); // cual es la url para hacer el fetch?
+          const response = await fetch("https://proyecto-final-backend-fawn.vercel.app/api/comments"); // cual es la url para hacer el fetch?
           const data = await response.json();
           setComentarios(data);
         } catch (error) {

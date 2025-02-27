@@ -34,7 +34,7 @@ const DescripcionServicios = ({ imagen, titulo, texto, invertido }) => {
         }}
       />
       <div>
-        <h2 style={{ color: "#5D4037", margin: "0" }}>{titulo}</h2>
+        <h2 style={{ color: "#5D4037", margin: "0", marginBottom:"25px" }}>{titulo}</h2>
         <p style={{ color: "#795548", margin: "0" }}>{texto}</p>
       </div>
     </div>

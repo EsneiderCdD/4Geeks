@@ -50,20 +50,8 @@ const Calificaciones = () => {
                 width: '100%',
                 maxWidth: '400px',
                 height: 'auto',
-                border: '2mm solid #f2d9b3',
                 backgroundColor: '#f2d9b3',
-              }}
-            />
-            <img
-              src="/imagenes/campo.png"
-              alt="Imagen 2"
-              style={{
-                borderRadius: '15px',
-                width: '100%',
-                maxWidth: '400px',
-                height: 'auto',
-                border: '2mm solid #f2d9b3',
-                backgroundColor: '#f2d9b3',
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
               }}
             />
           </div>
@@ -78,7 +66,7 @@ const Calificaciones = () => {
             {/* Contenedor de las tarjetas */}
             <div className="row justify-content-center">
               {comentarios.length > 0 ? (
-                comentarios.slice(currentIndex, currentIndex + 2).map((comentario) => (
+                comentarios.slice(currentIndex, currentIndex + 1).map((comentario) => (
                   <motion.div 
                     key={comentario.comment_id}
                     className="col-md-5 col-sm-6 mb-4"
@@ -86,21 +74,22 @@ const Calificaciones = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Card className="shadow" style={{ backgroundColor: '#e6d5b8', borderRadius: '12px' }}>
-                      <Card.Body className="text-center">
-                        <Card.Title style={{ color: '#5e524a', fontSize: '1.2rem', fontWeight: 'bold', textAlign: 'left' }}>
-                          {comentario.name}
-                        </Card.Title>
+                    <Card className="shadow" style={{ backgroundColor: '#e6d5b8', borderRadius: '12px', width: '300px' }}>
+                      <Card.Body className="text-center pb-0">
                         
-                        <div className="mb-3" style={{ color: '#b58e82', fontSize: '1.5rem' }}>
+                        
+                        <div className="mb-3" style={{ color: '#b58e82', fontSize: '1.5rem', textAlign: 'left' }}>
                           {"⭐".repeat(comentario.evaluation)}
                         </div>
       
-                        <Card.Text style={{ color: '#6a5c52', fontStyle: 'italic' }}>
+                        <Card.Text style={{ color: '#6a5c52', fontStyle: 'italic', textAlign: 'center', fontSize: '1.1rem' }}>
                           "{comentario.comment}"
                         </Card.Text>
+                        <Card.Title style={{ color: '#5e524a', fontSize: '1.1rem', fontWeight: 'bold', textAlign: 'right' }}>
+                          {comentario.name}
+                        </Card.Title>
       
-                        <Card.Footer className="text-muted" style={{ backgroundColor: '#e6d5b8', fontSize: '0.8rem', textAlign: 'right' }}> 
+                        <Card.Footer className="text-muted" style={{ backgroundColor: '#e6d5b8', fontSize: '0.9rem', textAlign: 'right' }}> 
                           {new Intl.DateTimeFormat('es-ES', { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(comentario.comment_date))}
                         </Card.Footer>
                       </Card.Body>

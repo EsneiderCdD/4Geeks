@@ -20,17 +20,14 @@ import NavbarApp from '../components/NavbarApp'
 const Home = () => {
   return (
     <div>
-     <NavbarApp/>
-     <Presentacion/>
-     <LoginRegister/>
-     <MiCarrusel/>
-     <TituloSlider/>
-     <Slider/>
-     <Acordeon/>
-     <DescripcionServicios/>
-     <PagoServicios/>
-     <Calificaciones/>
-     
+      <NavbarApp/>
+      <Presentacion/>
+      <MiCarrusel/>
+      <TituloSlider/>
+      <Slider/>
+      <Acordeon/>
+      <DescripcionServicios/>
+      <Calificaciones/>
     </div>
   )
 }

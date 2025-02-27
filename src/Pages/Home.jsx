@@ -21,6 +21,7 @@ const Home = () => {
   return (
     <div>
       <NavbarApp/>
+      <LoginRegister/>
       <Presentacion/>
       <MiCarrusel/>
       <TituloSlider/>

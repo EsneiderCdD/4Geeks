@@ -3,6 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Avatar from "./Avatar.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import Login from "../components/Login.jsx";
+import Register from "../components/Register.jsx"
+
+import { Modal } from "react-bootstrap"; // 🔹 AGREGADO POR NEIDER
 
 const NavbarApp = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +14,10 @@ const NavbarApp = () => {
   const [avatar, setAvatar] = useState(sessionStorage.getItem('user_avatar') || '');
   const dropdownRef = useRef(null);
 
+
+  const [showLogin, setShowLogin] = useState(false); // 🔹 AGREGADO POR NEIDER
+  const [showRegister, setShowRegister] = useState(false); // 🔹 AGREGADO POR NEIDER
+  
   useEffect(() => {
        // Cerrar el dropdown al salir de la zona
     const handleMouseLeave = (event) => {
@@ -96,6 +104,15 @@ const NavbarApp = () => {
         <img src="/imagenes/PT.webp" alt="Logo" style={{ height: '64px' }} />
       </div>
 
+      {/* Botones de Iniciar Sesión y Registrarse */} {/* 🔹 AGREGADO POR NEIDER */}
+      {!isLoggedIn && (   
+        <div className="d-flex gap-2">
+          <button className="btn btn-outline-dark" onClick={() => setShowLogin(true)}>Iniciar Sesión</button>
+          <button className="btn btn-outline-dark" onClick={() => setShowRegister(true)}>Registrarse</button>
+        </div>
+      )}
+
+
       {/* Dropdown en el lado derecho */}
       <div ref={dropdownRef} className="dropdown d-flex align-items-center gap-2 position-relative">
         <Avatar key={avatar} />
@@ -128,7 +145,35 @@ const NavbarApp = () => {
             </>
           )}
         </ul>
+
+
+          {/* Modal de Iniciar Sesión */} {/* 🔹 AGREGADO POR NEIDER */}
+        <Modal show={showLogin} onHide={() => setShowLogin(false)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Iniciar Sesión</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Login />
+          </Modal.Body>
+        </Modal>
+
+        {/* Modal de Registrarse */}
+        <Modal show={showRegister} onHide={() => setShowRegister(false)} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Registrarse</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Register />
+          </Modal.Body>
+        </Modal>
+
+
+
+
+
       </div>
+
+      
     </nav>
   );
 };

@@ -16,7 +16,7 @@ const Register = () => {
     user_phone: '',
     user_country: '',
   });
-  //Estado iniciar sesion
+  //Estado 
   const [showLogin, setShowLogin] = useState(false);
 
   const [errors, setErrors] = useState({});

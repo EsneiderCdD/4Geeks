@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../../api/axiosConfig";
 import "../../styles/UserList.css"; 
+import Comments from "../../components/Comments";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -82,6 +83,7 @@ const UserList = () => {
           </tbody>
         </table>
       )}
+      <Comments></Comments>
     </div>
   );
 };

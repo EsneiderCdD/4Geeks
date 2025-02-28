@@ -5,6 +5,8 @@ import Login from './Login';
 import CountrySelect from './CountrySelect';
 
 
+
+
 const Register = () => {
   // Copiamos la lógica de Register (estados, validaciones, etc.)
   const [formData, setFormData] = useState({
@@ -21,6 +23,8 @@ const Register = () => {
 
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -112,15 +116,7 @@ const Register = () => {
         overflow: "hidden", // Evita que los botones se vean cuando salen
       }}
     >
-      {/* Sección Izquierda: Texto de invitación */}
-      <div style={{ flex: 1, marginRight: "50px", marginLeft: "37px" }}>
-        <h1 style={{ fontSize: "1.4rem", marginBottom: "50px", color: "black" }}>
-            💖 Nos encanta tenerte aquí
-            </h1>
-            <p style={{ fontSize: "3.2rem", lineHeight: "1", color: "black" }}>
-            Llena tus datos y empieza a formar parte de esta comunidad de crecimiento.
-            </p>
-      </div>
+      
   
       {/* Sección Derecha: Formulario con Animación */}
 <motion.div

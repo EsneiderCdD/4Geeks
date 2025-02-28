@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useState } from 'react';
+
 import axios from '../api/axiosConfig';
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
-import { useNavigate } from "react-router-dom";
+
+import '../styles/Login.css';
+
 
 
 const Login = () => {
@@ -13,6 +17,9 @@ const Login = () => {
   const [message, setMessage] = useState('');
 
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(false);
+
 
   // Función para validar los campos
   const validate = () => {
@@ -37,13 +44,15 @@ const Login = () => {
   // Función de autenticación con el backend
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("Intentando loguear...");
     setMessage('');
+    
+    setLoading(true);
 
     if (!validate()) {
-      console.log("Error de validación. No se envió la solicitud.");
+      setLoading(false);
       return;
     }
+    
 
     try {
       const response = await axios.post('/api/auth/login', {
@@ -52,25 +61,17 @@ const Login = () => {
       });
   
       const token = response.data.access_token;
-      console.log('Token recibido:', token);
-  
-      // 🟢 GUARDAR EL TOKEN EN LOCALSTORAGE
       localStorage.setItem("accessToken", token);
       localStorage.setItem("userRole", response.data.user.role);
   
       if (response.data.user.role === "admin") {
-        console.log("Redirigiendo a /admin");
         navigate('/admin');  
       } else if (response.data.user.role === "user") { 
-        console.log("Redirigiendo a /user");
         navigate('/user');  
       } else {
-        setMessage(`Inicio de sesión exitoso: Bienvenido ${response.data.user.name} ${response.data.user.lastname}`);
-        
-        sessionStorage.setItem('access_token', response.data.access_token);
+        setMessage(`Bienvenido ${response.data.user.name} ${response.data.user.lastname}`);
+        sessionStorage.setItem('access_token', token);
         sessionStorage.setItem('user_avatar', response.data.user.avatar);
-
-        
         setTimeout(() => {
           window.dispatchEvent(new Event("avatarChange"));
         }, 100);
@@ -78,6 +79,8 @@ const Login = () => {
     } catch (error) {
       console.error('Error en la solicitud:', error);
       setMessage(error.response?.data?.message || 'No se pudo conectar con el servidor.');
+    } finally {
+      setLoading(false); // 🔴 Desactivar estado de carga siempre, éxito o error
     }
   };
 
@@ -93,13 +96,7 @@ const Login = () => {
         padding: "50px",
       }}
     >
-      {/* Sección Izquierda: Texto de invitación */}
-      <div style={{ flex: 1, marginRight: "50px", marginLeft: "37px" }}>
-        
-        <p style={{ fontSize: "1.4rem", lineHeight: "1", color: "black" }}>
-          Ingresa tu cuenta
-        </p>
-      </div>
+      
 
       {/* Sección Derecha: Formulario con Animación */}
       
@@ -177,6 +174,26 @@ const Login = () => {
             >
               Iniciar sesión
             </motion.button>
+            {loading && (
+           
+           
+           <motion.div /* CREADO POR NEIDER  */
+
+
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              style={{
+                marginTop: "10px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div className="spinner"></div> {/* 🔹 Spinner animado */}
+            </motion.div>
+          )}
+
           </motion.div>
         </form>
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "../../api/axiosConfig";
+import axios from "../../api/axiosConfig.js";
 import "../../styles/UserList.css"; 
-import Comments from "../../components/Comments";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -36,14 +35,13 @@ const UserList = () => {
     fetchUsers();
   }, [navigate]);
 
+  // Si no es admin, lo sacamos de la página
   useEffect(() => {
     const userRole = localStorage.getItem("userRole");
     if (userRole !== "admin") {
       navigate("/");
     }
   }, [navigate]);
-
-
 
   return (
     <div className="user-list-container">
@@ -65,7 +63,6 @@ const UserList = () => {
               <th>Email</th>
               <th>Teléfono</th>
               <th>Rol</th>
-              
             </tr>
           </thead>
           <tbody>
@@ -77,16 +74,13 @@ const UserList = () => {
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
                 <td>{user.role}</td>
-                
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      <Comments></Comments>
     </div>
   );
 };
 
 export default UserList;
-

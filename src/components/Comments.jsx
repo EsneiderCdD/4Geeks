@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../api/axiosConfig";
+import GoHomeButton from "./GoHomeButton";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
@@ -73,6 +74,7 @@ const Comments = () => {
           ))}
         </tbody>
       </table>
+      <GoHomeButton />
     </div>
   );
 };

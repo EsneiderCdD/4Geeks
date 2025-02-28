@@ -1,0 +1,15 @@
+.delete-user-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-user-button:hover {
+    background-color: #cc0000;
+  }
+  

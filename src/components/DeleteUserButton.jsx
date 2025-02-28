@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../api/axiosConfig";
-import "../styles/DeleteUserButton.css"; // " ; // Asegúrate de crear este archivo
+import "../styles/DeleteUserButton.css"; // Asegúrate de crear este archivo
 
 const DeleteUserButton = () => {
   const navigate = useNavigate();

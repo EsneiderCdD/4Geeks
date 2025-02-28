@@ -127,24 +127,50 @@ const NavbarApp = () => {
         >
           <FontAwesomeIcon icon={faBars} size="lg" style={{ color: "#a67b5b" }} />
         </button>
+        
         <ul 
-          className={`dropdown-menu  ${isOpen ? "show dropdown-animate" : "dropdown-animate-hide"}`} 
-          style={{ top: "100%",  right: "0", backgroundColor: '#f4e1c6', position: "absolute", maxWidth: 'auto' }}
-          onMouseLeave={() => setIsOpen(false)}
+  className={`dropdown-menu ${isOpen ? "show dropdown-animate" : "dropdown-animate-hide"}`} 
+  style={{ top: "100%", right: "0", backgroundColor: '#f4e1c6', position: "absolute", maxWidth: 'auto' }}
+  onMouseLeave={() => setIsOpen(false)}
+>
+  {!isLoggedIn ? (
+    <>
+      <li>
+        <button 
+          className="dropdown-item" 
+          style={{ color: '#8b5e3b' }} 
+          onClick={() => setShowLogin(true)}
         >
-          {!isLoggedIn ? (
-            <>
-              <li><a href="#" className="dropdown-item" style={{ color: '#8b5e3b' }}>Iniciar Sesión</a></li>
-              <li><a href="#" className="dropdown-item" style={{ color: '#8b5e3b' }}>Registrarse</a></li>
-            </>
-          ) : 
-          (
-            <>
-              <li><a href="#" className="dropdown-item" style={{ color: '#8b5e3b' }}>Modificar Datos</a></li>
-              <li><button onClick={handleLogout} className="dropdown-item" style={{ color: '#8b5e3b' }}>Cerrar Sesión</button></li>
-            </>
-          )}
-        </ul>
+          Iniciar Sesión
+        </button>
+      </li>
+      <li>
+        <button 
+          className="dropdown-item" 
+          style={{ color: '#8b5e3b' }} 
+          onClick={() => setShowRegister(true)}
+        >
+          Registrarse
+        </button>
+      </li>
+    </>
+  ) : (
+    <>
+      <li>
+        <a href="#" className="dropdown-item" style={{ color: '#8b5e3b' }}>Modificar Datos</a>
+      </li>
+      <li>
+        <button 
+          onClick={handleLogout} 
+          className="dropdown-item" 
+          style={{ color: '#8b5e3b', background: 'none', border: 'none', width: '100%', textAlign: 'left' }}
+        >
+          Cerrar Sesión
+        </button>
+      </li>
+    </>
+  )}
+</ul>
 
 
           {/* Modal de Iniciar Sesión */} {/* 🔹 AGREGADO POR NEIDER */}

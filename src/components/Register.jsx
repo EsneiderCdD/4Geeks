@@ -3,6 +3,7 @@ import axios from '../api/axiosConfig';
 import { motion } from "framer-motion";
 import Login from './Login';
 import CountrySelect from './CountrySelect';
+import '../styles/Register.css';
 
 
 
@@ -23,8 +24,7 @@ const Register = () => {
 
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
-
-
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,7 +71,13 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     setMessage('');
-    if (!validate()) return;
+    setLoading(true); // 🔹 Activar spinner
+
+    if (!validate()) {
+        setLoading(false); // 🔴 Desactivar spinner si hay errores
+        return;
+    }
+   
 
     try {
       const response = await axios.post('/api/user/register', {
@@ -83,21 +89,14 @@ const Register = () => {
         user_country: formData.user_country,
       });
 
-      if (response.data.message === 'Usuario registrado exitosamente') {
-        setMessage('Usuario registrado con éxito.');
-      } else {
-        setMessage(response.data.message || response.data);
-      }
+      setMessage('Usuario registrado con éxito.');
     } catch (error) {
-      console.error('Error en la solicitud:', error);
-      if (error.response && error.response.data && error.response.data.message) {
-        setMessage(error.response.data.message);
-      } else {
-        setMessage('Hubo un error al registrar el usuario.');
-      }
+        console.error('Error en la solicitud:', error);
+        setMessage(error.response?.data?.message || 'Hubo un error al registrar el usuario.');
+    } finally {
+        setLoading(false); // 🔴 Desactivar spinner siempre, éxito o error
     }
-
-};
+    };
     if (showLogin) {
         return <Login />;
     }
@@ -106,9 +105,10 @@ const Register = () => {
   return (
     <div
     style={{
+
         width: "100%",
         minHeight: "100vh",
-        backgroundColor: "#FFC7B9",
+        backgroundColor: "#F2D0A7",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -308,9 +308,26 @@ const Register = () => {
       </motion.button>
     </motion.div>
   </form>
+  {loading && (
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        style={{
+            marginTop: "10px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+        }}
+    >
+        <div className="spinner"></div> {/* 🔹 Spinner animado */}
+    </motion.div>
+)}
 
   {message && <p style={{ marginTop: "20px", color: "green" }}>{message}</p>}
 </motion.div>
+
+
 
     </div>
   );

@@ -89,7 +89,7 @@ const Login = () => {
       style={{
         width: "100%",
         minHeight: "100vh",
-        backgroundColor: "#FFC7B9",
+        backgroundColor: "#F2D0A7",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",

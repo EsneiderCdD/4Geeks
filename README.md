@@ -1,10 +1,5 @@
-# React + Vite
+No digas nada solo distfruta:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# proyecto-final_frontend
-# proyecto-final_frontend
+(1) Dashboardamin modificado: NavBar y (Consultar usuarios)
+(2)Desencadenara remplazo de Options por componentes individuales.
+### He quitado el styles principal por ahora pero no lo he borrado ( en dashboardamin)

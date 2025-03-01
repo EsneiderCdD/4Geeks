@@ -4,13 +4,14 @@ import "../../styles/AdmDashboard.css";
 
 
 import NavBar from "../Navbar/NavBar.jsx";
-import ConsultarUsuarios from "./ConsultarUsuarios.jsx";
+import AdmOptions from "../Dashboard/AdmOptions.jsx";
 
 const AdmDashboard = () => {
   return (
-    <div className="dashboard-background">
+    <div >
       <NavBar/>
-      <ConsultarUsuarios></ConsultarUsuarios>
+      <AdmOptions></AdmOptions>
+      
     
     </div>
     

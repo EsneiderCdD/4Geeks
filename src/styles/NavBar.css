@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #d2b48c; /* Color original del navbar */
+    height: 80px; /* Ajuste de altura similar */
+  }
+  
+  .navbar-left,
+  .navbar-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar-center {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b5e3b; /* Color de texto acorde a la estética */
+  }
+  
+  .nav-button {
+    background: none;
+    border: 2px solid #8b5e3b;
+    padding: 8px 15px;
+    font-size: 16px;
+    color: #8b5e3b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #8b5e3b;
+    color: #fff;
+  }
+  

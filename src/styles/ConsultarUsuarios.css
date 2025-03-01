@@ -1,0 +1,36 @@
+.consultar-usuarios-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4e1c6; /* Color base del navbar */
+    border: 2px solid #8b5e3b;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .consultar-usuarios-card:hover {
+    background-color: #e0c3a0;
+  }
+  
+  .consultar-usuarios-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .consultar-usuarios-title {
+    font-size: 22px;
+    color: #8b5e3b;
+    margin-bottom: 10px;
+  }
+  
+  .consultar-usuarios-description {
+    font-size: 16px;
+    color: #5e4033;
+  }
+  

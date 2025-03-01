@@ -1,22 +1,19 @@
 // AdmDashboard.jsx
 import "../../styles/AdmDashboard.css";
 
-import AdmNavBar from "./AdmNavbar.jsx";
-import AdmOptions from "./AdmOptions.jsx";
 
+
+import NavBar from "../Navbar/NavBar.jsx";
+import ConsultarUsuarios from "./ConsultarUsuarios.jsx";
 
 const AdmDashboard = () => {
   return (
     <div className="dashboard-background">
-      <AdmNavBar />
-      <div className="dashboard-sheet">
-      <AdmOptions/>
-      
-      
-      
+      <NavBar/>
+      <ConsultarUsuarios></ConsultarUsuarios>
     
-      </div>/
     </div>
+    
   );
 };
 

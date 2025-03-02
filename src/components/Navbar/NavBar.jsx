@@ -1,6 +1,7 @@
 // NavbarApp.jsx
 import React from "react";
 import "../../styles/Navbar.css";
+import LogoutButton from "../LogoutButton";
 
 const NavBar = () => {
   return (
@@ -19,7 +20,7 @@ const NavBar = () => {
       <div className="navbar-right">
         <button className="nav-button">Botón A</button>
         <button className="nav-button">Botón B</button>
-        <button className="nav-button">Botón C</button>
+        <button className="nav-button"> <LogoutButton></LogoutButton> </button>
       </div>
     </nav>
   );

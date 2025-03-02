@@ -6,6 +6,7 @@ import calendar from "../../gifs/calendar.gif";
 import comments from "../../gifs/comments.gif";
 import serviceprice from "../../gifs/serviceprice.gif";
 import analysis from "../../gifs/analysis.gif";
+import UserList from "../../components/InteractiveOptions/UserList";
 import Comments from "../Comments";
 
 const OptionCard = ({ title, description, imageUrl, onClick, isExpanded, toggleExpand }) => {
@@ -47,7 +48,7 @@ const AdminOptions = () => {
           />
           {expandedOption === "Consultar Usuario" && (
             <div className="expanded-container">
-              <Comments />
+              <UserList />
             </div>
           )}
           <OptionCard
@@ -59,8 +60,14 @@ const AdminOptions = () => {
             title="Comentarios"
             description="Revisa y gestiona los comentarios recibidos."
             imageUrl={comments}
-            onClick={() => navigate("/admin/comments")}
+            isExpanded={expandedOption === "Comentarios"}
+            toggleExpand={() => toggleExpand("Comentarios")}
           />
+          {expandedOption === "Comentarios" && (
+            <div className="expanded-container">
+              <Comments />
+            </div>
+          )}
           <OptionCard
             title="Precios / Servicios"
             description="Modifica y actualiza tarifas y servicios."

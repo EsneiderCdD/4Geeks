@@ -1,22 +1,20 @@
-import "../../styles/AdmOptions.css";
+import "../../styles/UserOptions.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import search from "../../gifs/search.gif";
-import calendar from "../../gifs/calendar.gif";
-import comments from "../../gifs/comments.gif";
-import serviceprice from "../../gifs/serviceprice.gif";
-import analysis from "../../gifs/analysis.gif";
-import UserList from "../../components/InteractiveOptions/UserList";
+import psychology from "../../gifs/psychology.gif";
+import mentoring from "../../gifs/mentoring.gif";
+import comment from "../../gifs/comment.gif";
+import form from "../../gifs/form.gif";
 import Comments from "../Comments";
 
-const OptionCard = ({ title, description, imageUrl, onClick, isExpanded, toggleExpand }) => {
+const OptionCard = ({ title, description, imageUrl, isExpanded, toggleExpand }) => {
   return (
-    <div className="option-card">
+    <div className="user-option-card">
       <div className="option-header" onClick={toggleExpand}>
-        <img src={imageUrl} alt={title} className="option-image" />
-        <div className="option-content">
-          <h2 className="option-title">{title}</h2>
-          <p className="option-description">{description}</p>
+        <img src={imageUrl} alt={title} className="user-option-image" />
+        <div className="user-option-content">
+          <h2 className="user-option-title">{title}</h2>
+          <p className="user-option-description">{description}</p>
         </div>
         <button className="option-button" onClick={toggleExpand}>
           {isExpanded ? "Ver menos" : "Ver más"}
@@ -26,7 +24,7 @@ const OptionCard = ({ title, description, imageUrl, onClick, isExpanded, toggleE
   );
 };
 
-const AdminOptions = () => {
+const UserOptions = () => {
   const navigate = useNavigate();
   const [expandedOption, setExpandedOption] = useState(null);
 
@@ -35,31 +33,27 @@ const AdminOptions = () => {
   };
 
   return (
-    <div className="dashboard-background">
-      <main className="dashboard-main">
-        <div className="options-grid">
+    <div className="user-dashboard-background">
+      <main className="user-dashboard-main">
+        <div className="user-options-grid">
           <OptionCard
-            title="Consultar Usuario"
-            description="Accede al perfil y datos de los usuarios."
-            imageUrl={search}
-            onClick={() => navigate("/admin/users")}
-            isExpanded={expandedOption === "Consultar Usuario"}
-            toggleExpand={() => toggleExpand("Consultar Usuario")}
+            title="Sesiones 1:1"
+            description="Agenda/Modifica/Elimina una sesión"
+            imageUrl={psychology}
+            isExpanded={expandedOption === "Sesiones 1:1"}
+            toggleExpand={() => toggleExpand("Sesiones 1:1")}
           />
-          {expandedOption === "Consultar Usuario" && (
-            <div className="expanded-container">
-              <UserList />
-            </div>
-          )}
           <OptionCard
-            title="Agenda"
-            description="Administra citas y reuniones fácilmente."
-            imageUrl={calendar}
+            title="Sesiones Grupales"
+            description="Reserva un cupo para el próximo evento presencial!"
+            imageUrl={mentoring}
+            isExpanded={expandedOption === "Sesiones Grupales"}
+            toggleExpand={() => toggleExpand("Sesiones Grupales")}
           />
           <OptionCard
             title="Comentarios"
-            description="Revisa y gestiona los comentarios recibidos."
-            imageUrl={comments}
+            description="Realiza comentarios."
+            imageUrl={comment}
             isExpanded={expandedOption === "Comentarios"}
             toggleExpand={() => toggleExpand("Comentarios")}
           />
@@ -69,14 +63,11 @@ const AdminOptions = () => {
             </div>
           )}
           <OptionCard
-            title="Precios / Servicios"
-            description="Modifica y actualiza tarifas y servicios."
-            imageUrl={serviceprice}
-          />
-          <OptionCard
-            title="Estadísticas"
-            description="Visualiza métricas y reportes de actividad."
-            imageUrl={analysis}
+            title="Modificar Datos"
+            description="Modifica y actualiza información."
+            imageUrl={form}
+            isExpanded={expandedOption === "Modificar Datos"}
+            toggleExpand={() => toggleExpand("Modificar Datos")}
           />
         </div>
       </main>
@@ -84,4 +75,4 @@ const AdminOptions = () => {
   );
 };
 
-export default AdminOptions;
+export default UserOptions;
